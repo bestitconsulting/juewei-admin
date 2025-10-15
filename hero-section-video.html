@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Section with Background Video</title>
+    <!-- 1. perplexity -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero-bg-media {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            color: white;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: #ffffff;
+            color: #222;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #f4b400;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!-- 2. chatgpt -->
+    <style>
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* full viewport height */
+            overflow: hidden;
+        }
+
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* keeps video covering area */
+            z-index: -1;
+        }
+
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-bg-media" id="perplexity">
+        <video autoplay loop muted playsinline poster="fallback.jpg" class="background-video">
+            <source src="hero-video.mp4" type="video/mp4" />
+            <source src="hero-video.webm" type="video/webm" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to Our Website</h1>
+            <p>Experience innovation with every scroll.</p>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+
+    <section class="hero" id="chatgpt">
+        <video autoplay muted loop playsinline id="heroVideo">
+            <source src="hero-video.mp4" type="video/mp4">
+            <source src="hero-video.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Fresh, Delicious, Delivered.</h1>
+            <p>Experience authentic flavors in every bite.</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+</body>
+
+</html>
